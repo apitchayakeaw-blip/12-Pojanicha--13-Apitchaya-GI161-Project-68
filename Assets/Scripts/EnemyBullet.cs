@@ -24,13 +24,15 @@ public class EnemyBullet : Weaphon
     {
         if (character is Player)
             character.TakeDamage(this.damage);
+        Destroy(this.gameObject);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        damage = 10;
         spawnPoint = new Vector2(transform.position.x, transform.position.y);
-        damage = 30;
+        
     }
 
     // Update is called once per frame

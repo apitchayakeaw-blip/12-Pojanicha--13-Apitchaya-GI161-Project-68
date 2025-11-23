@@ -16,7 +16,7 @@ public class Player : Character, IShootable
 
     public void OnHitWith(Enemy enemy)
     {
-       
+        TakeDamage(enemy.DamageHit);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -24,7 +24,7 @@ public class Player : Character, IShootable
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            Debug.Log($"{this.name} Hit with {enemy.name}");
+            Debug.Log($"{this.name} Hit with {enemy.name} ");
             OnHitWith(enemy);
         }
     }
@@ -40,7 +40,7 @@ public class Player : Character, IShootable
         Shoot();
     }
 
-    public override void Shoot()
+    public void Shoot()
     {
         if (Input.GetButtonDown("Fire1") && WaitTime >= ReloadTime)
         {

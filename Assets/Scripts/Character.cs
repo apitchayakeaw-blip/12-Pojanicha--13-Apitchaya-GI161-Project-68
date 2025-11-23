@@ -10,11 +10,13 @@ public abstract class Character : MonoBehaviour
         set => health = (value<0) ? 0:value;
     }
 
+    public int DamageHit { get; protected set; }
+
     protected Animator anim;
     protected Rigidbody2D rb;
 
 
-    public abstract void Shoot();
+   
 
     public void Tnti(int hp)
     {
@@ -28,6 +30,8 @@ public abstract class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        Debug.Log($"{this.name} got {damage} Current HP : {this.Health}");
+        IsDead();
     }
 
     public bool IsDead()
