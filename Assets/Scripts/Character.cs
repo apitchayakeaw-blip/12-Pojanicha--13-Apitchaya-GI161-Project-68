@@ -16,8 +16,6 @@ public abstract class Character : MonoBehaviour
     protected Rigidbody2D rb;
 
 
-   
-
     public void Tnti(int hp)
     {
         maxHealth = hp;

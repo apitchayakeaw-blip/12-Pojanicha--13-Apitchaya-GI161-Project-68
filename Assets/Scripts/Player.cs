@@ -24,7 +24,7 @@ public class Player : Character, IShootable
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            Debug.Log($"{this.name} Hit with {enemy.name} ");
+            Debug.Log($"{this.name} Hit with {enemy.name} Current HP : {Health}");
             OnHitWith(enemy);
         }
     }
