@@ -5,7 +5,7 @@ public abstract class Weaphon : MonoBehaviour
     public int damage;
 
     public IShootable Shooter;
-    public abstract void Move();
+   
     public abstract void OnHitWih(Character character);
 
     public void InitWeapon(int newDamage, IShootable newShooter)

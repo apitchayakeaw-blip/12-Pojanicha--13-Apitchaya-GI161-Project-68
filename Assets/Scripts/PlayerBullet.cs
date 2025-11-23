@@ -4,7 +4,7 @@ public class PlayerBullet : Weaphon
 {
 
     [SerializeField] private float speed;
-    public override void Move()
+    public void Move()
     {
 
 
