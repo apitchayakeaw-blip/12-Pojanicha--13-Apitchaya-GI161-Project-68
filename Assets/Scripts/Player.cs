@@ -1,21 +1,55 @@
 using UnityEngine;
 
-public class Player : Character
+public class Player : Character, IShootable
 {
-    public override void Shoot()
-    {
-        throw new System.NotImplementedException();
-    }
+    [field: SerializeField] public GameObject Bullet { get; set; }
+    [field: SerializeField] public Transform ShootPoint { get; set; }
+    public float ReloadTime { get; set; }
+    public float WaitTime { get; set; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        base.Tnti(100);
+        ReloadTime = 0.2f;
+        WaitTime = 0.0f;
+    }
+
+    public void OnHitWith(Enemy enemy)
+    {
+       
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            Debug.Log($"{this.name} Hit with {enemy.name}");
+            OnHitWith(enemy);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        WaitTime += Time.fixedDeltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Shoot();
+    }
+
+    public override void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1") && WaitTime >= ReloadTime)
+        {
+            var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
+            PlayerBullet playerBullet = bullet.GetComponent <PlayerBullet>();
+            if (playerBullet != null)
+                playerBullet.InitWeapon(20, this);
+
+            WaitTime = 0.0f;
+        }
     }
 }

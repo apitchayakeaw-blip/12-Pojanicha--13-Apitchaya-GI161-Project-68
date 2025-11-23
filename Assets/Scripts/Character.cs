@@ -13,6 +13,9 @@ public abstract class Character : MonoBehaviour
     protected Animator anim;
     protected Rigidbody2D rb;
 
+
+    public abstract void Shoot();
+
     public void Tnti(int hp)
     {
         maxHealth = hp;
@@ -38,7 +41,7 @@ public abstract class Character : MonoBehaviour
         else return false;
     }
 
-    public abstract void Shoot();
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
