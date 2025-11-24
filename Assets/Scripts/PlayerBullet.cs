@@ -20,12 +20,14 @@ public class PlayerBullet : Weaphon
             character.TakeDamage(this.damage);
     }
 
+  
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed = 4.0f * GetShootDirection();
-        damage = 30;
+        
     }
 
 

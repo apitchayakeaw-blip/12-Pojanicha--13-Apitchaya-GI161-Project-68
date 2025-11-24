@@ -3,14 +3,14 @@ using UnityEngine;
 public class Player : Character, IShootable
 {
 
-  
+ 
 
     [field: SerializeField] public GameObject Bullet { get; set; }
     [field: SerializeField] public Transform ShootPoint { get; set; }
     public float ReloadTime { get; set; }
     public float WaitTime { get; set; }
 
-    public int Damagehit = 20;
+    public int BulletDamage = 30;
 
   
 
@@ -28,6 +28,9 @@ public class Player : Character, IShootable
     {
         TakeDamage(enemy.DamageHit);
     }
+
+
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -58,8 +61,8 @@ public class Player : Character, IShootable
     public void IncreasedATK(int value)
     {
 
-        Damagehit += value;
-        Debug.Log($"Player got BootsATK Current ATK : {value}");
+        BulletDamage += value;
+        Debug.Log($"Player got BootsATK Current ATK : {BulletDamage}");
 
 
     }
@@ -88,7 +91,7 @@ public class Player : Character, IShootable
             var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
             PlayerBullet playerBullet = bullet.GetComponent <PlayerBullet>();
             if (playerBullet != null)
-                playerBullet.InitWeapon(20, this);
+                playerBullet.InitWeapon(BulletDamage, this);
 
             WaitTime = 0.0f;
         }
