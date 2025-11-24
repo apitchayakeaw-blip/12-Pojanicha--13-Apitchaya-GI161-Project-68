@@ -15,7 +15,7 @@ public abstract class Character : MonoBehaviour
     protected Animator anim;
     protected Rigidbody2D rb;
 
-    [SerializeField] UIHealthBar healthBar;
+    [SerializeField] private UIHealthBar healthBar;
 
     public System.Action OnDeath;
 
@@ -27,6 +27,13 @@ public abstract class Character : MonoBehaviour
         healthBar = GetComponentInChildren<UIHealthBar>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        if (healthBar != null)
+        {
+            healthBar.SetTarget(this);
+        }
+
+        healthBar.UpdateHealthBar(Health, maxHealth);
     }
 
     public void TakeDamage(int damage)
@@ -50,11 +57,11 @@ public abstract class Character : MonoBehaviour
             
             Debug.Log($"{this.name} is dead and destroyed");
             OnDeath?.Invoke();
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return true;
             
         }
-        else return false;
+        return false;
 
         
 
