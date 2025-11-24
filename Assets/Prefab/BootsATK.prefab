@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2290366509201812326}
   - component: {fileID: 5150905228250401313}
   - component: {fileID: 2787254060626504199}
+  - component: {fileID: 5855144620026410865}
   m_Layer: 0
   m_Name: BootsATK
   m_TagString: Untagged
@@ -185,3 +186,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5855144620026410865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322755890746713207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4066b27f62dd6e94780d54d9ec5fc71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ItemsValue>k__BackingField: 10

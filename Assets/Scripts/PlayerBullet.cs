@@ -26,7 +26,6 @@ public class PlayerBullet : Weaphon
     {
         speed = 4.0f * GetShootDirection();
         damage = 30;
-
     }
 
 
