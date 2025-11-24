@@ -29,6 +29,23 @@ public class Player : Character, IShootable
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+       Items item = other.GetComponent<Items>();
+        if (item)
+        {
+          
+            item.Pickup(this);
+        }
+    }
+
+    public void Heal (int value)
+    {
+        Health += value;
+        Debug.Log($"Player got 20HP Current HP : {Health}");
+    }
+
+
     private void FixedUpdate()
     {
         WaitTime += Time.fixedDeltaTime;
