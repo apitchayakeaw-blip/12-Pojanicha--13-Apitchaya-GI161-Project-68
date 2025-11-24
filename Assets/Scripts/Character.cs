@@ -22,7 +22,7 @@ public abstract class Character : MonoBehaviour
     {
         maxHealth = hp;
         Health = hp;
-        healthBar = GetComponent<UIHealthBar>();
+        healthBar = GetComponentInChildren<UIHealthBar>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
