@@ -17,6 +17,8 @@ public abstract class Character : MonoBehaviour
 
     [SerializeField] UIHealthBar healthBar;
 
+    public System.Action OnDeath;
+
 
     public void Tnti(int hp)
     {
@@ -45,11 +47,19 @@ public abstract class Character : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(this.gameObject);
+            
             Debug.Log($"{this.name} is dead and destroyed");
+            OnDeath?.Invoke();
+            Destroy(this.gameObject);
             return true;
+            
         }
         else return false;
+
+        
+
+
+
     }
 
     

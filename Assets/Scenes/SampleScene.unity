@@ -707,7 +707,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   <Bullet>k__BackingField: {fileID: 4158252921866835744, guid: 3fbf0d969dfe6f34b958d1ae5fba6f38, type: 3}
   <ShootPoint>k__BackingField: {fileID: 1722477665}
-  Damagehit: 20
+  BulletDamage: 30
 --- !u!61 &650790411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1225,7 +1225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.27, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1547391784
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   itemPrefab:
   - {fileID: 5322755890746713207, guid: f92758781651bff41a7c0b853fb7adb1, type: 3}
   - {fileID: 6493173303125786992, guid: 0efde0eb0fda459428f1147c67e20688, type: 3}
-  secondsSpawn: 3
+  secondsSpawn: 5
   minTras: -9
   maxTras: 9
 --- !u!4 &1547391786
@@ -1272,7 +1272,7 @@ Transform:
   m_GameObject: {fileID: 1547391784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 494, y: 6.72, z: 0.017492894}
+  m_LocalPosition: {x: 0.04, y: 8.46, z: 0.017492894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1519,7 +1519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.05, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1912664957

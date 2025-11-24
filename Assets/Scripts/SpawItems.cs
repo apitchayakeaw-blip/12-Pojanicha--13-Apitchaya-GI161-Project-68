@@ -8,11 +8,37 @@ public class SpawItems : MonoBehaviour
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
 
+    [SerializeField] Character[] target;
+
+
+    Coroutine spawnCoroutine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SpawnItems());
+        spawnCoroutine = StartCoroutine(SpawnItems());
+
+        foreach (var t in target)
+        {
+            if (t != null)
+            {
+                t.OnDeath += StopSpawn;
+            }
+        }
+
     }
+
+
+    void StopSpawn()
+    {
+        Debug.Log("Stop spawn because target is dead!");
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+        }
+    }
+
+
 
     IEnumerator SpawnItems()
     {
@@ -26,5 +52,18 @@ public class SpawItems : MonoBehaviour
             yield return new WaitForSeconds(secondsSpawn);
 
         }
+
     }
+
+   
+
 }
+
+
+
+ 
+
+
+
+
+
